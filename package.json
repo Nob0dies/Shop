@@ -3,6 +3,16 @@
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
-    "gulp-jade": "^1.1.0"
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development http-server -a lvh.me -p 3500 & gulp",
+    "build": "NODE_ENV=production gulp build"
+  },
+  "dependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp.spritesmith": "^6.0.0"
   }
 }

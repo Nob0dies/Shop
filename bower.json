@@ -1,7 +1,19 @@
 {
-  "name": "site",
+  "name": "ShopPage",
+  "version": "1.0.0",
+  "authors": [
+    "Elizaveta Gonchar <Femida1990@mail.ru>"
+  ],
   "dependencies": {
-    "jquery": "1.8",
-    "normalize-css": "normalize.css#~3.0.3"
-  }
+    "jquery": "2.*",
+    "normalize.css": "*"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app",
+    "test",
+    "tests"
+  ]
 }

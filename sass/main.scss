@@ -1,0 +1,145 @@
+@import "sprite-social-icons";
+$socialHeight: 26px;
+$socialWidth: 27px;
+$colorOrange: #ff6600;
+$margTop: 20px;
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-width: 1000px;
+  min-height: 100%;
+  margin-bottom: -220px;
+  background: #f4f4f4;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+
+.header{
+  height:173px;
+
+}
+.header-top{
+  padding: 20px;
+  background: #FFFFFF;
+
+  border-bottom: 2px solid #ebedef;
+}
+.social-icons__item,.contacts__item{
+  list-style: none;
+  display: inline-block;
+}
+.social-icons,.contacts{
+  display: inline-block;
+  background: #FFFFFF;
+}
+.social-icons__item{
+height:$socialHeight ;
+width: $socialWidth;
+margin: 5px;
+}
+.social-icons__item_vk{
+  background: url(../../../Shop0002/_img/VK.png) no-repeat;
+
+}
+.social-icons__item_fb{
+  background: url(../../../Shop0002/_img/FB.png)no-repeat;
+
+}
+.social-icons__item_tv{
+  background: url(../../../Shop0002/_img/Twitter.png)no-repeat;
+
+}
+.contacts{
+  float: right;
+}
+.contacts__item{
+  padding-right: 50px;
+  padding-left: 20px;
+}
+.contacts__item_phone{
+  background: url(../../../Shop0002/_img/telephone.png)no-repeat;
+}
+.contacts__item_adress{
+  background: url(../../../Shop0002/_img/map-pin.png)no-repeat;
+
+}
+.logo{
+  background: url(../../../Shop0002/_img/cooltech-logo.png)no-repeat;
+  width: 238px;
+  height: 36px;
+  margin-left: 70px;
+  margin-top: 20px;
+
+}
+.nav{
+  background: #ffffff;
+  width: 100%;
+}
+.nav-list{
+  padding-left: 80px;
+  text-align: center;
+}
+.nav__item{
+  background: #ffffff ;
+  display: inline-block;
+  list-style: none;
+  padding-left:25px ;
+  padding-right: 25px;
+ line-height: 52px;
+
+}
+.nav__item_active{
+  background: $colorOrange ;
+  color: #ffffff;
+
+}
+.left-block{
+  width: 334px;
+  border: 1px solid #ebedef;
+  background: #ffffff;
+  margin-left: 80px;
+  margin-top: $margTop;
+}
+
+
+.footer{
+  margin-top: $margTop;
+}
+.footer, .wrapper:after {
+  height: 220px;
+}
+.footer-top {
+  padding: 20px;
+  -webkit-columns: 200px 2;
+  -moz-columns: 200px 2;
+  columns: 200px 2;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+
+
+
+}
+
+.footer-bottom{
+  height: 220px;
+  background: url(../../../Shop0002/_img/footer.png);
+}
+.title-footer{
+  padding-left: 20px;
+}
+
+ p{
+
+   padding-top: 10px;
+}
+
+@include sprites($spritesheet-sprites);
