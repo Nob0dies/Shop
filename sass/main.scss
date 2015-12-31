@@ -1,18 +1,17 @@
-@import "sprite-social-icons";
-$socialHeight: 26px;
-$socialWidth: 27px;
+@import "sidebar";
 $colorOrange: #ff6600;
 $margTop: 20px;
 
 * {
   margin: 0;
+  font-family: Arial, Tahoma;
 }
 html, body {
   height: 100%;
 }
 
 .wrapper {
-  min-width: 1000px;
+  min-width: 800px;
   min-height: 100%;
   margin-bottom: -220px;
   background: #f4f4f4;
@@ -29,7 +28,6 @@ html, body {
 .header-top{
   padding: 20px;
   background: #FFFFFF;
-
   border-bottom: 2px solid #ebedef;
 }
 .social-icons__item,.contacts__item{
@@ -41,66 +39,122 @@ html, body {
   background: #FFFFFF;
 }
 .social-icons__item{
-height:$socialHeight ;
-width: $socialWidth;
-margin: 5px;
-}
-.social-icons__item_vk{
-  background: url(../../../Shop0002/_img/VK.png) no-repeat;
+  margin: 5px;
+  cursor: pointer;
 
 }
-.social-icons__item_fb{
-  background: url(../../../Shop0002/_img/FB.png)no-repeat;
 
-}
-.social-icons__item_tv{
-  background: url(../../../Shop0002/_img/Twitter.png)no-repeat;
-
-}
 .contacts{
   float: right;
-}
-.contacts__item{
-  padding-right: 50px;
-  padding-left: 20px;
-}
-.contacts__item_phone{
-  background: url(../../../Shop0002/_img/telephone.png)no-repeat;
-}
-.contacts__item_adress{
-  background: url(../../../Shop0002/_img/map-pin.png)no-repeat;
-
-}
-.logo{
-  background: url(../../../Shop0002/_img/cooltech-logo.png)no-repeat;
-  width: 238px;
-  height: 36px;
   margin-left: 70px;
-  margin-top: 20px;
+
 
 }
+.contacts__item {
+  width: 100%;
+  display: inline;
+  padding-left: 50px;
+  display: inline;
+}
+
+.sprite__all-map,.sprite__all-telephone{
+  display: inline-block;
+}
+.item-text{
+  padding-left: 5px;
+}
+
+
+
+.logo{
+  margin-left: 70px;
+  margin-top: 30px;
+  float: left;
+
+}
+.search-button{
+  background: $colorOrange;
+  color: #FFFFFF;
+  border: none;
+  padding: 0;
+  padding: 9px 7px;
+  border-top-right-radius: 3pt ;
+  border-bottom-right-radius: 3pt;
+  font-size: 14pt;
+  line-height: 23px ;
+}
+.input_group {
+font-size: 0;
+  float: left;
+  margin-top: 28px;
+  margin-left: 45px;
+}
+.search{
+  border: 1px solid #dee1e4;
+  padding: 0;
+  padding: 9px 7px;
+  font-size: 14pt;
+  border-top-left-radius: 3pt;
+  border-bottom-left-radius: 3pt;
+}
+.references,.references__item{
+  list-style: none;
+  display: inline-block;
+  font-size: 14pt;
+}
+
+.references__item>a{
+  transition: color 0.3s;
+  font-family: Arial, Tahoma;
+  color: #333333;
+  font-weight: bolder;
+  margin-right: 30px;
+
+
+}
+.references__item:last-child>a{
+  margin-right: 0;
+}
+
+.references__item>a:hover{
+  color:$colorOrange ;
+
+}
+
+
+
+
+
+
+
 .nav{
   background: #ffffff;
   width: 100%;
 }
+
 .nav-list{
-  padding-left: 80px;
   text-align: center;
 }
+
 .nav__item{
   background: #ffffff ;
   display: inline-block;
   list-style: none;
-  padding-left:25px ;
-  padding-right: 25px;
- line-height: 52px;
+  line-height: 52px;
+  font-size: 16px;
+  margin-right: 20px;
+  padding: 3px 8px;
 
+}
+.nav__item:last-child{
+  margin-right: 0px;
 }
 .nav__item_active{
   background: $colorOrange ;
   color: #ffffff;
 
 }
+
 .left-block{
   width: 334px;
   border: 1px solid #ebedef;
@@ -110,13 +164,13 @@ margin: 5px;
 }
 
 
-.footer{
+.text_block{
   margin-top: $margTop;
 }
 .footer, .wrapper:after {
   height: 220px;
 }
-.footer-top {
+.text_block {
   padding: 20px;
   -webkit-columns: 200px 2;
   -moz-columns: 200px 2;
@@ -125,21 +179,52 @@ margin: 5px;
   -moz-column-gap: 20px;
   column-gap: 20px;
 
-
-
 }
 
-.footer-bottom{
-  height: 220px;
-  background: url(../../../Shop0002/_img/footer.png);
-}
 .title-footer{
   padding-left: 20px;
 }
 
  p{
-
    padding-top: 10px;
 }
 
+@import "_sprite-social-icons";
 @include sprites($spritesheet-sprites);
+@import "sprite-all";
+@include sprites($spritesheet-sprites);
+.sprite__all-footer{
+  width: 100% ;
+  height: 220px;
+}
+.sprite__social-twitter:hover{
+  @include sprite($sprite-social-twitter-hover);
+}
+
+.accordion__item__title {
+  font-size: 14pt;
+  font-weight: bolder;
+  display: inline-block;
+  margin-bottom: 14px;
+  width:100%;
+}
+
+.accordion__item__title:after{
+  content: "";
+  opacity: 0;
+  display: block;
+  position:absolute;
+  right: 20px;
+  top: 5px;
+  @include sprite($sprite-all-line-arrow-up);
+  transition-timing-function: cubic-bezier(.27,.93,.87,1);
+  transition: all 0.2s cubic-bezier(.27,.93,.87,1), transform 0.2s cubic-bezier(.27,.93,.87,1), opacity 0.6s cubic-bezier(.27,.93,.87,1);
+  transform:  rotate(45deg) skewY(-24deg) skewX(-30deg) translateX(17px) translateY(0px);
+}
+
+
+.accordion__item__title:hover:after {
+  opacity: 100;
+  right: 20px;
+  transform: rotate(0deg) skewY(0deg) translateX(3px) translateY(11px);
+}

@@ -1,0 +1,92 @@
+$color_white: #ffffff;
+$color_grey: #cccccc;
+$color_black: #000000;
+$color_royal-blue: #0a3153;
+$color_red: #ff1800;
+$color_yellow: #fff343;
+$color_orange: #fb914a;
+$color_fresh-lime: #92c37c;
+$color_cool-aqua: #40a6ff;
+$color_twilight_magenta: #9870ad;
+$color_pink-ladies: #dc78ad;
+$color_pearl-copper: #7f401d;
+$border_color: #dee1e4;
+
+.filters__item {
+  position:relative;
+}
+.accordion__item__title{
+  cursor:pointer;
+}
+.filters.accordion{
+  padding:0px;
+}
+.left-block__filters {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(222, 225, 228);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.accordion__item{
+  border: 1px solid $border_color;
+  list-style: none;
+  padding:12px;
+}
+.color__list {
+  padding-left: 0px;
+}
+.color__list .list__item {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  border: 1px solid $border_color;
+}
+
+.list__item_white {
+  background: $color_white;
+}
+
+.list__item_grey {
+  background: $color_grey;
+}
+
+.list__item_black {
+  background: $color_black;
+}
+
+.list__item_royal-blue {
+  background: $color_royal-blue;
+}
+
+.list__item_red {
+  background: $color_red;
+}
+
+.list__item_yellow {
+  background: $color_yellow;
+}
+
+.list__item_orange {
+  background: $color_orange;
+}
+
+.list__item_fresh-lime {
+  background: $color_fresh-lime;
+}
+
+.list__item_cool-aqua {
+  background: $color_cool-aqua;
+}
+
+.list__item_twilight_magenta {
+  background: $color_twilight_magenta;
+}
+
+.list__item_pink-ladies {
+  background: $color_pink-ladies;
+}
+
+.list__item_pearl-copper {
+  background: $color_pearl-copper;
+}

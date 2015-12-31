@@ -1,8 +1,9 @@
 var gulp = require("gulp"),
-   // browserSync = require('browser­sync'),
     jade = require('gulp-jade'),
-    spritesmith  = require('gulp.spritesmith'),
+    spritesmith = require('gulp.spritesmith'),
     sass = require('gulp-sass');
+var browserSync = require("browser-sync");
+var clear       = require('gulp-clean');
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
@@ -50,31 +51,16 @@ var config = {
 
 //запускаем сервер
 gulp.task('server', function () {
-/*    browserSync({
+    browserSync({
         port: 9000,
         server: {
             baseDir: './app'
         }
-    });*/
-    gulp.watch(path.dev.sass, ['sass']);
-    gulp.watch(path.dev.jade, ['jade-watch']);
+    });
 });
-
-
-//наблюдаем за изменениями в файлах папки app
-/*
-gulp.task('watch', function () {
-    gulp.watch([
-        'app/!*.html',
-        'app/js/!**!/!*.js',
-        'app/styles/!**!/!*.css',
-        'app/img/!**!/!*.*'
-    ]).on('change', browserSync.reload)
-});
-*/
 
 //компилируем jade в html
-gulp.task('jade', function() {
+gulp.task('jade', function () {
     gulp.src('./jade/index.jade')
         .pipe(jade({
             pretty: '\t' // отступы в 1 таб
@@ -87,7 +73,7 @@ gulp.task('jade-watch', ['jade']);
 
 //компиляция scss в css
 gulp.task('sass', function () {
-    gulp.src('./sass/**/*.scss')
+    gulp.src('./sass/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./app/css'));
 });
@@ -98,12 +84,12 @@ gulp.task('sprite_social', function () {
     var spriteData = gulp.src('./img/social/*.png').pipe(spritesmith({
         imgName: 'sprite-social-icons.png',
         cssFormat: 'scss',
-        cssName: 'sprite-social-icons.scss',
+        cssName: '_sprite-social-icons.scss',
         imgPath: '../img/sprite-social-icons.png',
         algorithm: 'binary-tree',
         padding: 4,
-        cssVarMap: function(sprite) {
-            sprite.name = 'social-' + sprite.name
+        cssVarMap: function (sprite) {
+            sprite.name = 'sprite__social-' + sprite.name
         }
     }));
 
@@ -112,12 +98,51 @@ gulp.task('sprite_social', function () {
     //return spriteData.pipe(gulp.dest('app/img/'));
 });
 
+// Собираем спрайты
+gulp.task('sprite_all', function () {
+    // Собирает картинки в папке ./img и возвращает .png спрайт and CSS классы
+    var spriteData = gulp.src('./img/*.png').pipe(spritesmith({
+        imgName: 'sprite-all.png',
+        cssFormat: 'scss',
+        cssName: '_sprite-all.scss',
+        imgPath: '../img/sprite-all.png',
+        algorithm: 'binary-tree',
+        padding: 4,
+        cssVarMap: function (sprite) {
+            sprite.name = 'sprite__all-' + sprite.name
+        }
+    }));
 
-// Watch
-gulp.task('watch', function(){
-    gulp.watch('./jade/index.jade',['jade']);
-    gulp.watch('./sass/main.scss',['sass']);
-    gulp.watch('./img/social/*.*',['sprite_social']);
+    spriteData.img.pipe(gulp.dest('./app/img/')); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('./sass/')); // путь, куда сохраняем стили
+    //return spriteData.pipe(gulp.dest('app/img/'));
 });
+
+// clear dist
+gulp.task('clean', function () {
+    return gulp.src('./app/**/*.*', { read: false })
+        .pipe(clear({force:true}));
+});
+
+
+gulp.task('build', ['clean',
+    'sprite_all',
+    'sprite_social',
+    'jade',
+    'sass'
+]);
+
+//наблюдаем за изменениями в файлах папки app
+gulp.task('watch', function () {
+
+    gulp.watch('./sass/**', ['sass']);
+    gulp.watch('./jade/**', ['jade']);
+    gulp.watch('./img/social/*.*', ['sprite_social']);
+
+    gulp.watch(['./app/**'], function (file) {
+        browserSync.reload();
+    });
+});
+
 //задание по умолчанию ("gulp") запускает сервер и слушатель изменений
-gulp.task('default', ['sprite_social', 'server', 'watch', 'sass:watch', 'jade-watch']);
+gulp.task('default', ['server', 'watch']);

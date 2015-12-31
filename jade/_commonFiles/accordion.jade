@@ -1,0 +1,58 @@
+
+
+//
+   Created by evgonchar on 31.12.2015.
+
+
+ul.filters.accordion
+    li.filters__item.filters__shop-availability.accordion__item.accordion__item_opened
+        h3.accordion__item__title.accordion__item__title Наличие в магазинах
+        div.accordion__body
+            p.inputs
+                input(type="radio" name="availability" value="all_shops" id="all-shops")
+                label.shop-availability__item(for="all-shops") Во всех магазинах
+            p.inputs
+                input(type="radio" name="availability" value="near_shops" id="near-shops")
+                label.shop-availability__item(for="near-shops") В ближайшем ко мне магазине
+
+    li.filters__item.filters__brends.accordion__item
+        h3.accordion__item__title.accordion__item__title Бренды
+
+        div.accordion__body
+            p.inputs
+                input(type="checkbox" name="lenovo" value="" id="lenovo")
+                label.brends__item Lenovo
+            p.inputs
+                input(type="checkbox" name="apple" value="" id="apple")
+                label.brends__item Apple
+            p.inputs
+                input(type="checkbox" name="samsung" value="" id="samsung")
+                label.brends__item Samsung
+            p.inputs
+                input(type="checkbox" name="asus" value="" id="asus")
+                label.brends__item Asus
+            p.inputs
+                input(type="checkbox" name="motorola" value="" id="motorola")
+                label.brends__item Motorola
+            p.inputs
+                span.brends__item Сбросить фильтр
+    li.filters__item.filters__price.accordion__item
+        h3.accordion__item__title.accordion__item__title Цена
+        p.price__item.price__item_inputs от 1000 до 100000
+        p.price__item.price__item_slider Hi! I'm SliderMan!
+
+    li.filters__item.filters__color.accordion__item
+        h3.accordion__item__title.accordion__item__title Цвет
+        ul.color__list
+            li.list__item.list__item_white
+            li.list__item.list__item_grey
+            li.list__item.list__item_black
+            li.list__item.list__item_royal-blue
+            li.list__item.list__item_red
+            li.list__item.list__item_yellow
+            li.list__item.list__item_orange
+            li.list__item.list__item_fresh-lime
+            li.list__item.list__item_cool-aqua
+            li.list__item.list__item_twilight_magenta
+            li.list__item.list__item_pink-ladies
+            li.list__item.list__item_pearl-copper

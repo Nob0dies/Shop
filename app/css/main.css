@@ -1,3 +1,221 @@
+.filters__item {
+  position: relative; }
+
+.accordion__item__title {
+  cursor: pointer; }
+
+.filters.accordion {
+  padding: 0px; }
+
+.left-block__filters {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dee1e4;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6); }
+
+.accordion__item {
+  border: 1px solid #dee1e4;
+  list-style: none;
+  padding: 12px; }
+
+.color__list {
+  padding-left: 0px; }
+
+.color__list .list__item {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #dee1e4; }
+
+.list__item_white {
+  background: #ffffff; }
+
+.list__item_grey {
+  background: #cccccc; }
+
+.list__item_black {
+  background: #000000; }
+
+.list__item_royal-blue {
+  background: #0a3153; }
+
+.list__item_red {
+  background: #ff1800; }
+
+.list__item_yellow {
+  background: #fff343; }
+
+.list__item_orange {
+  background: #fb914a; }
+
+.list__item_fresh-lime {
+  background: #92c37c; }
+
+.list__item_cool-aqua {
+  background: #40a6ff; }
+
+.list__item_twilight_magenta {
+  background: #9870ad; }
+
+.list__item_pink-ladies {
+  background: #dc78ad; }
+
+.list__item_pearl-copper {
+  background: #7f401d; }
+
+* {
+  margin: 0;
+  font-family: Arial, Tahoma; }
+
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-width: 800px;
+  min-height: 100%;
+  margin-bottom: -220px;
+  background: #f4f4f4; }
+
+.wrapper:after {
+  content: "";
+  display: block; }
+
+.header {
+  height: 173px; }
+
+.header-top {
+  padding: 20px;
+  background: #FFFFFF;
+  border-bottom: 2px solid #ebedef; }
+
+.social-icons__item, .contacts__item {
+  list-style: none;
+  display: inline-block; }
+
+.social-icons, .contacts {
+  display: inline-block;
+  background: #FFFFFF; }
+
+.social-icons__item {
+  margin: 5px;
+  cursor: pointer; }
+
+.contacts {
+  float: right;
+  margin-left: 70px; }
+
+.contacts__item {
+  width: 100%;
+  display: inline;
+  padding-left: 50px;
+  display: inline; }
+
+.sprite__all-map, .sprite__all-telephone {
+  display: inline-block; }
+
+.item-text {
+  padding-left: 5px; }
+
+.logo {
+  margin-left: 70px;
+  margin-top: 30px;
+  float: left; }
+
+.search-button {
+  background: #ff6600;
+  color: #FFFFFF;
+  border: none;
+  padding: 0;
+  padding: 9px 7px;
+  border-top-right-radius: 3pt;
+  border-bottom-right-radius: 3pt;
+  font-size: 14pt;
+  line-height: 23px; }
+
+.input_group {
+  font-size: 0;
+  float: left;
+  margin-top: 28px;
+  margin-left: 45px; }
+
+.search {
+  border: 1px solid #dee1e4;
+  padding: 0;
+  padding: 9px 7px;
+  font-size: 14pt;
+  border-top-left-radius: 3pt;
+  border-bottom-left-radius: 3pt; }
+
+.references, .references__item {
+  list-style: none;
+  display: inline-block;
+  font-size: 14pt; }
+
+.references__item > a {
+  transition: color 0.3s;
+  font-family: Arial, Tahoma;
+  color: #333333;
+  font-weight: bolder;
+  margin-right: 30px; }
+
+.references__item:last-child > a {
+  margin-right: 0; }
+
+.references__item > a:hover {
+  color: #ff6600; }
+
+.nav {
+  background: #ffffff;
+  width: 100%; }
+
+.nav-list {
+  text-align: center; }
+
+.nav__item {
+  background: #ffffff;
+  display: inline-block;
+  list-style: none;
+  line-height: 52px;
+  font-size: 16px;
+  margin-right: 20px;
+  padding: 3px 8px; }
+
+.nav__item:last-child {
+  margin-right: 0px; }
+
+.nav__item_active {
+  background: #ff6600;
+  color: #ffffff; }
+
+.left-block {
+  width: 334px;
+  border: 1px solid #ebedef;
+  background: #ffffff;
+  margin-left: 80px;
+  margin-top: 20px; }
+
+.text_block {
+  margin-top: 20px; }
+
+.footer, .wrapper:after {
+  height: 220px; }
+
+.text_block {
+  padding: 20px;
+  -webkit-columns: 200px 2;
+  -moz-columns: 200px 2;
+  columns: 200px 2;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px; }
+
+.title-footer {
+  padding-left: 20px; }
+
+p {
+  padding-top: 10px; }
+
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 
@@ -28,138 +246,129 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-* {
-  margin: 0; }
-
-html, body {
-  height: 100%; }
-
-.wrapper {
-  min-width: 1000px;
-  min-height: 100%;
-  margin-bottom: -220px;
-  background: #f4f4f4; }
-
-.wrapper:after {
-  content: "";
-  display: block; }
-
-.header {
-  height: 173px; }
-
-.header-top {
-  padding: 20px;
-  background: #FFFFFF;
-  border-bottom: 2px solid #ebedef; }
-
-.social-icons__item, .contacts__item {
-  list-style: none;
-  display: inline-block; }
-
-.social-icons, .contacts {
-  display: inline-block;
-  background: #FFFFFF; }
-
-.social-icons__item {
-  height: 26px;
-  width: 27px;
-  margin: 5px; }
-
-.social-icons__item_vk {
-  background: url(../../../Shop0002/_img/VK.png) no-repeat; }
-
-.social-icons__item_fb {
-  background: url(../../../Shop0002/_img/FB.png) no-repeat; }
-
-.social-icons__item_tv {
-  background: url(../../../Shop0002/_img/Twitter.png) no-repeat; }
-
-.contacts {
-  float: right; }
-
-.contacts__item {
-  padding-right: 50px;
-  padding-left: 20px; }
-
-.contacts__item_phone {
-  background: url(../../../Shop0002/_img/telephone.png) no-repeat; }
-
-.contacts__item_adress {
-  background: url(../../../Shop0002/_img/map-pin.png) no-repeat; }
-
-.logo {
-  background: url(../../../Shop0002/_img/cooltech-logo.png) no-repeat;
-  width: 238px;
-  height: 36px;
-  margin-left: 70px;
-  margin-top: 20px; }
-
-.nav {
-  background: #ffffff;
-  width: 100%; }
-
-.nav-list {
-  padding-left: 80px;
-  text-align: center; }
-
-.nav__item {
-  background: #ffffff;
-  display: inline-block;
-  list-style: none;
-  padding-left: 25px;
-  padding-right: 25px;
-  line-height: 52px; }
-
-.nav__item_active {
-  background: #ff6600;
-  color: #ffffff; }
-
-.left-block {
-  width: 334px;
-  border: 1px solid #ebedef;
-  background: #ffffff;
-  margin-left: 80px;
-  margin-top: 20px; }
-
-.footer {
-  margin-top: 20px; }
-
-.footer, .wrapper:after {
-  height: 220px; }
-
-.footer-top {
-  padding: 20px;
-  -webkit-columns: 200px 2;
-  -moz-columns: 200px 2;
-  columns: 200px 2;
-  -webkit-column-gap: 20px;
-  -moz-column-gap: 20px;
-  column-gap: 20px; }
-
-.footer-bottom {
-  height: 220px;
-  background: url(../../../Shop0002/_img/footer.png); }
-
-.title-footer {
-  padding-left: 20px; }
-
-p {
-  padding-top: 10px; }
-
-.social-fb {
+.sprite__social-fb {
   background-image: url(../img/sprite-social-icons.png);
   background-position: -31px 0px;
   width: 26px;
   height: 26px; }
 
-.social-twitter {
+.sprite__social-twitter-hover {
   background-image: url(../img/sprite-social-icons.png);
   background-position: 0px -30px;
   width: 26px;
   height: 26px; }
 
-.social-vk {
+.sprite__social-twitter {
+  background-image: url(../img/sprite-social-icons.png);
+  background-position: -30px -30px;
+  width: 26px;
+  height: 26px; }
+
+.sprite__social-vk {
   background-image: url(../img/sprite-social-icons.png);
   background-position: 0px 0px;
   width: 27px;
   height: 26px; }
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+.sprite__all-cooltech-logo {
+  background-image: url(../img/sprite-all.png);
+  background-position: 0px -374px;
+  width: 238px;
+  height: 36px; }
+
+.sprite__all-footer {
+  background-image: url(../img/sprite-all.png);
+  background-position: 0px 0px;
+  width: 1284px;
+  height: 370px; }
+
+.sprite__all-line-arrow-up {
+  background-image: url(../img/sprite-all.png);
+  background-position: -242px -374px;
+  width: 18px;
+  height: 11px; }
+
+.sprite__all-map-pin {
+  background-image: url(../img/sprite-all.png);
+  background-position: -242px -389px;
+  width: 12px;
+  height: 16px; }
+
+.sprite__all-map {
+  background-image: url(../img/sprite-all.png);
+  background-position: -258px -389px;
+  width: 12px;
+  height: 16px; }
+
+.sprite__all-telephone {
+  background-image: url(../img/sprite-all.png);
+  background-position: -274px -389px;
+  width: 12px;
+  height: 16px; }
+
+.sprite__all-footer {
+  width: 100%;
+  height: 220px; }
+
+.sprite__social-twitter:hover {
+  background-image: url(../img/sprite-social-icons.png);
+  background-position: 0px -30px;
+  width: 26px;
+  height: 26px; }
+
+.accordion__item__title {
+  font-size: 14pt;
+  font-weight: bolder;
+  display: inline-block;
+  margin-bottom: 14px;
+  width: 100%; }
+
+.accordion__item__title:after {
+  content: "";
+  opacity: 0;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  background-image: url(../img/sprite-all.png);
+  background-position: -242px -374px;
+  width: 18px;
+  height: 11px;
+  transition-timing-function: cubic-bezier(0.27, 0.93, 0.87, 1);
+  transition: all 0.2s cubic-bezier(0.27, 0.93, 0.87, 1), transform 0.2s cubic-bezier(0.27, 0.93, 0.87, 1), opacity 0.6s cubic-bezier(0.27, 0.93, 0.87, 1);
+  transform: rotate(45deg) skewY(-24deg) skewX(-30deg) translateX(17px) translateY(0px); }
+
+.accordion__item__title:hover:after {
+  opacity: 100;
+  right: 20px;
+  transform: rotate(0deg) skewY(0deg) translateX(3px) translateY(11px); }
