@@ -1,1 +1,27 @@
 .footer.sprite__all-footer
+    .footer__logo
+    .footer__content
+        -var icons =["VK", "FB","Twitter"]
+        ul.footer-icons
+            each icon in icons
+                li(class="footer-icons__item footer__social-" + icon)
+                    a(href="#").socials__link
+
+
+        -var references_top =["Планшеты","Мобильные телефоны","Мр3 плееры"];
+        -var references_bottom =["Персональные компьютеры","Ноутбуки","Аксессуары","Бытовая техника"]
+
+        ul.references-footer-top
+            each reference in references_top
+                li.references-footer__item
+                    a(href ="#" class="references-footer__item_link")=reference
+
+        ul.references-footer-bottom
+            each reference in references_bottom
+                li.references-footer__item
+                    a(href ="#" class="references-footer__item_link")=reference
+    .no_copy
+        span All right reserved. 2015. no copy allowed
+
+    script(type="text/javascript" src="vendor/jquery/dist/jquery.js")
+    script(type="text/javascript" src="js/app.js")

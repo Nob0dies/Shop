@@ -1,0 +1,102 @@
+$colorOrange: #ff6600;
+.header-top{
+  padding: 20px;
+  background: #FFFFFF;
+  border-bottom: 2px solid #ebedef;
+}
+.social-icons__item,.contacts__item{
+  list-style: none;
+  display: inline-block;
+}
+.social-icons,.contacts{
+  display: inline-block;
+  background: #FFFFFF;
+}
+.social-icons__item{
+  margin: 5px;
+  cursor: pointer;
+
+}
+
+.contacts{
+  float: right;
+  margin-left: 70px;
+
+
+}
+.contacts__item {
+  width: 100%;
+  display: inline;
+  padding-left: 50px;
+  display: inline;
+}
+
+.sprite__all-map,.sprite__all-telephone{
+  display: inline-block;
+  padding-bottom: 1px;
+}
+.item-text{
+  padding-left: 5px;
+  color: #333333;
+}
+
+
+
+.logo{
+  margin-left: 70px;
+  margin-top: 30px;
+  float: left;
+}
+.search-button{
+  background: $colorOrange;
+  color: #FFFFFF;
+  border: none;
+  padding: 0;
+  padding: 9px 7px;
+  border-top-right-radius: 3pt ;
+  border-bottom-right-radius: 3pt;
+  font-size: 14pt;
+  line-height: 23px ;
+}
+.input_group {
+  font-size: 0;
+  float: left;
+  margin-top: 28px;
+  margin-left: 45px;
+}
+.search{
+  border: 1px solid #dee1e4;
+  padding: 0;
+  padding: 9px 7px;
+  font-size: 14pt;
+  border-top-left-radius: 3pt;
+  border-bottom-left-radius: 3pt;
+}
+.references,.references__item{
+  list-style: none;
+  display: inline-block;
+  font-size: 14pt;
+}
+
+.references__item>a{
+  transition: color 0.3s;
+  font-family: Arial, Tahoma;
+  color: #333333;
+  font-weight: bolder;
+  margin-right: 30px;
+
+
+}
+.references__item:last-child>a{
+  margin-right: 0;
+}
+
+.references__item>a:hover{
+  color:$colorOrange ;
+
+}
+.phone{
+  text-decoration: none;
+  color: #333333;
+}
+

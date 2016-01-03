@@ -11,6 +11,7 @@ $color_twilight_magenta: #9870ad;
 $color_pink-ladies: #dc78ad;
 $color_pearl-copper: #7f401d;
 $border_color: #dee1e4;
+$colorOrange: #ff6600;
 
 .filters__item {
   position:relative;
@@ -41,6 +42,13 @@ $border_color: #dee1e4;
   width: 37px;
   height: 37px;
   border: 1px solid $border_color;
+}
+.list__item {
+  margin: 12px;
+}
+.list__item_active{
+  border: 2px solid $colorOrange;
+
 }
 
 .list__item_white {
@@ -89,4 +97,56 @@ $border_color: #dee1e4;
 
 .list__item_pearl-copper {
   background: $color_pearl-copper;
+}
+.list__item.list__item_active.list__item_black{
+  border: 2px solid $colorOrange;
+
+}
+
+.accordion__body {
+
+}
+
+
+.accordion__item .accordion__body {
+  overflow: hidden;
+  height: 0px;
+}
+
+.accordion__item_opened .accordion__body {
+  height: auto;
+
+}
+
+
+//ценовая линейка
+.price-category__list{
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+
+.price-category__item{
+  color: #5d656c;
+  padding: 0;
+  height:100%;
+  line-height: 100%;
+}
+.price-category__item_active{
+  background: #d9e5ea;
+  border-top:1px solid #dee1e4;
+}
+.price-category__link{
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s;
+  height:33.5px;
+  width: 301px;
+  padding-left: 30px;
+  color: #5d656c;
+  padding-top: 10px;
+
 }

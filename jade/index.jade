@@ -4,48 +4,23 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
         link(rel="stylesheet" href="css/main.css")
+        link(rel="stylesheet" href="vendor/animate.css/animate.css")
         title общий файлkkkk
     body
         .wrapper
             .header
-                .header-top
-                    ul.social-icons
-                        li.social-icons__item.sprite__social-vk
-                        li.social-icons__item.sprite__social-fb
-                        li.social-icons__item.sprite__social-twitter
+                include ./_commonFiles/header
 
-                    ul.contacts
-                        li.contacts__item
-                            .sprite__all-map
-                            span.item-text ул.Маяковская 6,офис 17
-                        li.contacts__item
-                            .sprite__all-telephone
-                            span.item-text +7(921)123-12-13
-
-
-                .logo.sprite__all-cooltech-logo
-                .input_group
-                    input.search(type="text",placeholder="Что будем искать")
-                    button.search-button() Найти
-                    ul.references
-                        li.references__item
-                            a.references__item__map.references__item__map-active(href="#") Карта проезда
-                        li.references__item
-                            a.references__item__rders(href="#") История заказов
-                        li.references__item
-                            a.references__item__cart(href="#") Корзина
-
-            .nav
-                ul.nav-list
-                    li.nav__item Планшеты
-                    li.nav__item.nav__item_active Мобильные телефоны
-                    li.nav__item Мр3 плееры
-                    li.nav__item Персональные компьютеры
-                    li.nav__item Ноутбуки
-                    li.nav__item Аксесуары
-                    li.nav__item Бытовая техника
+            include ./_commonFiles/nav
             .content
+                include _commonFiles/breadcrumbs
+                h2.Mobile-title Мобильные телефоны
                 .left-block
+                    ul.price-category__list.left-block__filters
+                        -var categories =["Флагманы" , "Бюджетная линейка"]
+                        each category in categories
+                            li(class="price-category__item price-category__item_"+((category=="Бюджетная линейка")?"active":""))
+                                a(href= "#").price-category__link= category
 
                     .left-block__filters
                         include _commonFiles/accordion

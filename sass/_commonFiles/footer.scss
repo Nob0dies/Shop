@@ -1,0 +1,67 @@
+.sprite__all-footer{
+  width: 100% ;
+  height: 220px;
+}
+.footer__content{
+  float: right;
+}
+.footer__logo{
+  float: left;
+  height:220px;
+  width: 238px;
+  background: url(../img/cooltech-footer.png) no-repeat left center;
+  margin-left: 75px;
+
+}
+.footer__social-VK{
+  background: url(../img/VK.png) no-repeat;  }
+.footer__social-FB{
+  background: url(../img/FB.png) no-repeat;
+}
+.footer__social-Twitter{
+  background: url(../img/Twitter.png) no-repeat;
+}
+.footer__social-Twitter:hover{
+  background: url(../img/Twitter-hover.png)no-repeat;
+}
+.footer-icons__item{
+  list-style: none;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  height: 43px;
+  width: 43px;
+}
+.footer-icons{
+  text-align: right;
+  margin-right: 75px;
+  margin-top:20px ;
+}
+.references-footer__item{
+  list-style: none;
+  display: inline-block;
+  color: #FFFFFF;
+}
+.references-footer__item_link{
+  color: #FFFFFF;
+}
+
+.references-footer-top,.references-footer-bottom{
+  margin-top: 20px;
+  display:block;
+  text-align: right;
+  margin-right: 50px;
+}
+.references-footer__item{
+  margin-right: 25px;
+  font-size: 10pt;
+
+}
+.no_copy{
+  text-align: center;
+  vertical-align: bottom;
+  color: #FFFFFF;
+  font-size: 8pt;
+  padding-top: 200px;
+  padding-right: 250px;
+}

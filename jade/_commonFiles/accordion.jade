@@ -1,58 +1,99 @@
 
-
-//
-   Created by evgonchar on 31.12.2015.
-
-
 ul.filters.accordion
-    li.filters__item.filters__shop-availability.accordion__item.accordion__item_opened
-        h3.accordion__item__title.accordion__item__title Наличие в магазинах
-        div.accordion__body
-            p.inputs
-                input(type="radio" name="availability" value="all_shops" id="all-shops")
-                label.shop-availability__item(for="all-shops") Во всех магазинах
-            p.inputs
-                input(type="radio" name="availability" value="near_shops" id="near-shops")
-                label.shop-availability__item(for="near-shops") В ближайшем ко мне магазине
 
-    li.filters__item.filters__brends.accordion__item
-        h3.accordion__item__title.accordion__item__title Бренды
+        li.filters__item.filters__shop-availability.accordion__item.accordion__item_opened
+            h3.accordion__item__title Наличие в магазинах
+            div.accordion__body
+                p.radio
+                    input(id="male" type="radio" name="gender" value="male")
+                    label(for="male") Во всех магазинах
+                p.radio
+                    input(id="female" type="radio" name="gender" value="female")
+                    label(for="female") В ближайшем ко мне магазине
 
-        div.accordion__body
-            p.inputs
-                input(type="checkbox" name="lenovo" value="" id="lenovo")
-                label.brends__item Lenovo
-            p.inputs
-                input(type="checkbox" name="apple" value="" id="apple")
-                label.brends__item Apple
-            p.inputs
-                input(type="checkbox" name="samsung" value="" id="samsung")
-                label.brends__item Samsung
-            p.inputs
-                input(type="checkbox" name="asus" value="" id="asus")
-                label.brends__item Asus
-            p.inputs
-                input(type="checkbox" name="motorola" value="" id="motorola")
-                label.brends__item Motorola
-            p.inputs
-                span.brends__item Сбросить фильтр
-    li.filters__item.filters__price.accordion__item
-        h3.accordion__item__title.accordion__item__title Цена
-        p.price__item.price__item_inputs от 1000 до 100000
-        p.price__item.price__item_slider Hi! I'm SliderMan!
+    form.top-form
+        li.filters__item.filters__brends.accordion__item
+            h3.accordion__item__title Бренды
+            div.accordion__body
+                p.checkbox
+                    input(type="checkbox" name="lenovo" value="" id="lenovo")
+                    label(for="lenovo").brends__item Lenovo
+                p.checkbox
+                    input(type="checkbox" name="apple" value="" id="apple")
+                    label(for="apple").brends__item Apple
+                p.checkbox
+                    input(type="checkbox" name="samsung" value="" id="samsung")
+                    label(for="samsung").brends__item Samsung
+                p.checkbox
+                    input(type="checkbox" name="asus" value="" id="asus")
+                    label(for="asus").brends__item Asus
+                p.checkbox
+                    input(type="checkbox" name="motorola" value="" id="motorola")
+                    label(for="motorola").brends__item Motorola
+                p.inputs
+                    button(type=reset).brends__reset Сбросить фильтр
 
-    li.filters__item.filters__color.accordion__item
-        h3.accordion__item__title.accordion__item__title Цвет
-        ul.color__list
-            li.list__item.list__item_white
-            li.list__item.list__item_grey
-            li.list__item.list__item_black
-            li.list__item.list__item_royal-blue
-            li.list__item.list__item_red
-            li.list__item.list__item_yellow
-            li.list__item.list__item_orange
-            li.list__item.list__item_fresh-lime
-            li.list__item.list__item_cool-aqua
-            li.list__item.list__item_twilight_magenta
-            li.list__item.list__item_pink-ladies
-            li.list__item.list__item_pearl-copper
+
+        li.filters__item.filters__price.accordion__item
+            h3.accordion__item__title Цена
+            div.accordion__body
+                p.inputs
+                    p.price__item.price__item_inputs от 1000 до 100000
+                p.inputs
+                    input( type="range" min="0" max="100000" step="1" value="50")
+
+        li.filters__item.filters__color.accordion__item
+            h3.accordion__item__title Цвет
+            div.accordion__body
+                p.inputs
+                    ul.color__list
+                        li.list__item.list__item_white
+                            a(href="#").list__item_color
+                            //ul.color__list
+                                -var items=["ffffff","cccccc","000000","0a3153","ff1800","fff343","fb914a","92c37c","40a6ff","9870ad","dc78ad","7f401d"]
+                                each item in items
+                                    li.list__item
+                                        a(href="#" style="background-color: #" + color).list__item_color
+                        li.list__item.list__item_grey
+                            a(href="#").list__item_color
+                        li.list__item.list__item_active.list__item_black
+                            a(href="#").list__item_color
+                        li.list__item.list__item_royal-blue
+                            a(href="#").list__item_color
+                        li.list__item.list__item_red
+                            a(href="#").list__item_color
+                        li.list__item.list__item_yellow
+                            a(href="#").list__item_color
+                        li.list__item.list__item_orange
+                            a(href="#").list__item_color
+                        li.list__item.list__item_fresh-lime
+                            a(href="#").list__item_color
+                        li.list__item.list__item_cool-aqua
+                            a(href="#").list__item_color
+                        li.list__item.list__item_twilight_magenta
+                            a(href="#").list__item_color
+                        li.list__item.list__item_pink-ladies
+                            a(href="#").list__item_color
+                        li.list__item.list__item_pearl-copper
+                            a(href="#").list__item_color
+    form.buttom-form
+        li.filters__item.filters__color.accordion__item
+            h3.accordion__item__title Операционные системы
+            div.accordion__body
+                p.checkbox
+                    input(type="checkbox" name="android" value="" id="android")
+                    label(for="android").operating__system Android
+                p.checkbox
+                    input(type="checkbox" name="ios" value="" id="ios")
+                    label(for="ios").operating__system iOS
+                p.checkbox
+                    input(type="checkbox" name="windows" value="" id="windows")
+                    label(for="windows").operating__system Windows Mobile
+                p.checkbox
+                    input(type="checkbox" name="symbian" value="" id="symbian")
+                    label(for="symbian").operating__system Symbian
+                p.checkbox
+                    input(type="checkbox" name="custom" value="" id="custom")
+                    label(for="custom").brends__item Custom
+                p.inputs
+                    button(type=reset).brends__reset Сбросить фильтр

@@ -5,8 +5,9 @@
     "Elizaveta Gonchar <Femida1990@mail.ru>"
   ],
   "dependencies": {
-    "jquery": "2.*",
-    "normalize.css": "*"
+    "jquery": "2",
+    "normalize.css": "*",
+    "animate.css": "~3.5.0"
   },
   "license": "MIT",
   "ignore": [

@@ -21,22 +21,26 @@ var accardion = (function () {
     };
 
     var _toggle = function () {
-        .
-        animate({left: "100px"}, 500);
+        $(select.body, item).animate({top: "100px"}, 500);
     };
 
     var _setListeners = function () {
-        obj.click(function (e) {
+        $('.accordion__item__title').click(function(e){
             target = $(e.target);
             event = e;
-            item = target.closest(select.item);
-            $(item).toggleClass(select.opened);
+            item = target.closest('.'+select.item);
+            body = target.next('.'+select.body);
+            item.toggleClass(select.opened);
+        });
+
+        $('.brends__reset').click(function(e){
+            $('.filters__brends input[type=checkbox]').removeAttr('checked');
         });
         /*
-        $('.accordion__item__title').click(function (e) {
-            console.log(e);
-            $(this).closest('.filters__item').toggleClass('accordion__item_opened');
-        })*/
+         $('.accordion__item__title').click(function (e) {
+         console.log(e);
+         $(this).closest('.filters__item').toggleClass('accordion__item_opened');
+         })*/
     };
 
     return {

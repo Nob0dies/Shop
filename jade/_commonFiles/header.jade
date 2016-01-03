@@ -1,3 +1,32 @@
 //
    Created by evgonchar on 26.12.2015.
 
+.header-top
+    -var icons =["vk", "fb","twitter"]
+    ul.social-icons
+        each icon in icons
+            li(class="social-icons__item sprite__social-"+icon)
+                a(href="#").socials__link
+
+    ul.contacts
+        li.contacts__item
+            .sprite__all-map
+            span.item-text ул.Маяковская 6,офис 17
+        li.contacts__item
+            .sprite__all-telephone
+            a(href="tel:+79211231213").phone.item-text +7(921)123-12-13
+
+a(href="").logo.sprite__all-cooltech-logo
+
+.input_group
+    form.search-form
+    input.search(type="text",placeholder="Что будем искать")
+    button(name="" type="submit" ).search-button Найти
+
+    ul.references
+        li.references__item
+            a.references__item__map.references__item__map-active(href="#") Карта проезда
+        li.references__item
+            a.references__item__orders(href="#") История заказов
+        li.references__item
+            a.references__item__cart(href="#") Корзина
