@@ -1,4 +1,4 @@
-/.idea
-# Created by .ignore support plugin (hsz.mobi)
 node_modules
-/app/vendor
+app/bower
+.sass-cache
+app/.sass-cache

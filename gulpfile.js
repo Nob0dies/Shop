@@ -1,44 +1,60 @@
-/**
- * Created by ssgonchar on 31.12.2015.
- */
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var jade        = require('gulp-jade');
-var reload      = browserSync.reload;
+var gulp = require("gulp"),
+	browserSync = require('browser-sync'),
+	jade = require('gulp-jade'),
+	sass = require('gulp-sass'),
+	spritesmith = require('gulp.spritesmith');
 
-/**
- * Compile jade files into HTML
- */
-gulp.task('templates', function() {
-    return gulp.src('./jade/**/*.jade')
-        .pipe(jade())
-        .pipe(gulp.dest('./app/'))
+
+
+//компилятор _jade файлов
+gulp.task('jade', function() {  
+   gulp.src('app/_jade/*.jade')
+    .pipe(jade({
+        pretty: true
+    }))
+    .pipe(gulp.dest('./app/'));
 });
 
-/**
- * Important!!
- * Separate task for the reaction to `.jade` files
- */
-gulp.task('jade-watch', ['templates'], reload);
 
-/**
- * Sass task for live injecting into all browsers
- */
+//компилятор sass файлов
 gulp.task('sass', function () {
-    return gulp.src('./sass/**')
-        .pipe(sass())
-        .pipe(gulp.dest('./app/css'))
-        .pipe(reload({stream: true}));
+  gulp.src('app/_scss/**/*.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest('app/_css'));
 });
 
-/**
- * Serve and watch the scss/jade files for changes
- */
-gulp.task('default', ['sass', 'templates'], function () {
-
-    browserSync({server: './app'});
-
-    gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./jade/**/*.jade',      ['jade-watch']);
+//генератор спрайтов spritesmith
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('./app/img/social_footer/*.png').pipe(spritesmith({  //откуда брать картинки
+    imgName: 'social_footer.png',
+    cssName: '_social_footer.scss',
+    padding: 20
+  }));
+	spriteData.img.pipe(gulp.dest('./app/img/'));   // куда складывать готовые спрайты
+	spriteData.css.pipe(gulp.dest('./app/_scss/_common/'));     // куда складывать стили спрайтов
 });
+
+//browserSync
+gulp.task('server', function () {
+	browserSync({
+		port: 9000,
+		server: {
+			baseDir: 'app'
+		}
+	});
+});
+
+//прослушка событий
+gulp.task('watch', function () {
+	gulp.watch('app/_jade/**/*', ['jade']);
+	gulp.watch('app/_scss/**/*', ['sass']);
+	gulp.watch([
+		'app/index.html',
+		'app/*.html',
+		'app/_js/**/*.js',
+		'app/_css/**/*.css'
+		]).on('change', browserSync.reload);
+});
+
+
+gulp.task('default', ['server', 'watch']);

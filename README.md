@@ -1,7 +1,5 @@
-# Shop
-Just simple shop page
-
-## Problems
-
-* Bug: Error: `libsass` bindings not found. Try reinstalling `node-sass`
-  Make: `npm uninstall --save-dev gulp-sass` and then `npm install --save-dev gulp-sass`
+1. git clone https://github.com/username/repo.git site
+2. cd site
+3. bower i
+4. npm i
+5. gulp

@@ -1,13 +1,10 @@
 {
-  "name": "site",
-  "main": "gulpfile.js",
+  "name": "Shop",
   "devDependencies": {
-    "browser-sync": "^2.2.0",
-    "gulp": "^3.8.11",
-    "gulp-jade": "^1.0.0",
-    "gulp-sass": "^2.1.1"
-  },
-  "scripts": {
-    "start": "gulp"
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1",
+    "gulp.spritesmith": "^6.0.0"
   }
 }
