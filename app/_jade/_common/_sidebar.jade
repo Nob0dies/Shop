@@ -1,0 +1,106 @@
+//фильтр
+aside.sidebar
+	nav.sidebar-nav
+		ul.sidebar-nav__list
+			li.sidebar-nav__item
+				a(href="#" class="sidebar-nav__link") Флагманы
+			li.sidebar-nav__item
+				a(href="#" class="sidebar-nav__link") Бюджетная линейка
+	//аккордеон
+	.filter
+		.accordeon
+			ul.accordeon__list
+				li.accordeon__item
+					a(href="#" class="accordeon__trigger") Наличие в магазинах
+					div.accordeon__inner
+						form.accordeon__inner-form
+							ul.accordeon__inner-list
+								li.accordeon__inner-item 
+									input(type="radio" class="radiobutton" name="radio" id="radio1")
+									label(for="radio1" class="accordeon__inner-label")
+										span 
+										| Во всех магазинах
+								li.accordeon__inner-item 
+									input(type="radio" class="radiobutton" name="radio" id="radio2")
+									label(for="radio2" class="accordeon__inner-label")
+										span 
+										| В ближайшем ко мне магазине				
+				li.accordeon__item
+					a(href="#" class="accordeon__trigger") Бренды
+					div.accordeon__inner
+						form.accordeon__inner-form
+							ul.accordeon__inner-list
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check1")
+									label(for="check1" class="accordeon__inner-label")
+										span
+										| Lenovo
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check2")
+									label(for="check2" class="accordeon__inner-label")
+										span
+										| Apple							
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check3")
+									label(for="check3" class="accordeon__inner-label")
+										span
+										| Samsung							
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check4")
+									label(for="check4" class="accordeon__inner-label")
+										span
+										| Asus						
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check5")
+									label(for="check5" class="accordeon__inner-label") 
+										span
+										| Motorola
+							a(href="#" class="reset-filter") Сбрость фильтр
+				li.accordeon__item
+					a(href="#" class="accordeon__trigger") Цена
+					div.accordeon__inner
+						label(for="minCost" class="cost__label") От
+						input(type="text" id="minCost" value = "5000" class="slider__input slider__input-min")
+						label(for="maxCost" class="cost__label") До
+						input(type="text" id="maxCost" value = "15 000" class="slider__input slider__input-max")
+						div(id="slider")
+				li.accordeon__item
+					//выбор цвета
+					a(href="#" class="accordeon__trigger") Цвет
+					div.accordeon__inner
+						ul.squares__list
+							- var squares = ['white', 'gray', 'black', 'darkblue', 'red', 'yellow', 'orange', 'green', 'blue', 'purple', 'pink', 'brown']
+							each item in squares
+								li.squares__item
+									a(href="#" class="squares__link squares__link-#{item}") #{item}
+				li.accordeon__item
+					a(href="#" class="accordeon__trigger") Операционные системы
+					div.accordeon__inner
+						form.accordeon__inner-form
+							ul.accordeon__inner-list
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check6")
+									label(for="check6" class="accordeon__inner-label")
+										span
+										| Android
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check7")
+									label(for="check7" class="accordeon__inner-label")
+										span
+										| iOS						
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check8")
+									label(for="check8" class="accordeon__inner-label")
+										span
+										| Windows Mobile							
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check9")
+									label(for="check9" class="accordeon__inner-label")
+										span
+										| Symbian						
+								li.accordeon__inner-item 
+									input(type="checkbox" class="checkbox" id="check10")
+									label(for="check10" class="accordeon__inner-label") 
+										span
+										| Custom
+							a(href="#" class="reset-filter") Сбрость фильтр
