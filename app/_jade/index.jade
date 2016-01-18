@@ -1,0 +1,118 @@
+include _common/_mixins
+
+doctype html
+html(lang='ru')
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible', content="IE=edge,chrome=1")
+		meta(name='viewport' content='width=device-width')
+		link(rel="icon" href="favicon.ico" type="image/x-icon")
+		link(rel="stylesheet", href="bower/normalize-css/normalize.css")
+		link(rel="stylesheet", href="fonts/fonts.css")
+		link(rel="stylesheet", href="bower/select2/dist/css/select2.css")
+		link(rel="stylesheet" href="_css/main.css")
+		title Дз2
+	body
+		//блок контейнер
+		.wrapper
+			//шапка
+			include _common/_header
+			//горизонтальная панель навигации
+			include _common/_nav
+			//хлебные крошки
+			include _common/_breadcrumbs
+			.content
+				.content__container
+					//аккордеон
+					include _common/_sidebar
+					//контент, каталог товаров
+					section.main-content
+							//шапка каталога
+							div.main-content__header
+								//выпадающий список сортировки
+								div.main-content__sort
+									span.main-content__categories.main-content__categories-sort Сортировать по
+									select.main-content__select
+										option.main-content__option По цене
+										option.main-content__option По популярности
+								//кнопки переключения вида каталога
+								div.main-content__view
+									span.main-content__categories Вид каталога
+									ul(class="views__list" id="views_list")
+										- var view = ['list', 'grid', 'line']
+										each item in view
+											li.views__item
+												a(href="#" class="views__button views__button-#{item}" id="#{item}")
+													div(class="views__button_container views__button_container-#{item}")
+							//товар
+							section.article-content
+								block content
+									.products
+										ul(class="products__list" id="products_view")
+											- for(var i=0;i<9;i++)
+												li.products__item
+													.products__item-inner
+														.products__left
+															.products__slideshow
+																//фото товара
+																.products__slideshow-block
+																	a(href="#").products__slideshow-display
+																		img(src="./img/image/alcatel_one_touch_2004g_bk_images_0.jpg", alt="").products__slideshow-img
+																	ul.products__slideshow-thumbs
+																		li.products__slideshow-item
+																			a(href="#").products__slideshow-link
+																				img(src="./img/image/alcatel_one_touch_2004g_bk_images_0.jpg" alt="").products__slideshow-thumb-img
+																		li.products__slideshow-item
+																			a(href="#").products__slideshow-link
+																				img(src="./img/image/alcatel_one_touch_2004g_bk_images_1.jpg" alt="").products__slideshow-thumb-img
+																		li.products__slideshow-item
+																			a(href="#").products__slideshow-link
+																				img(src="./img/image/alcatel_one_touch_2004g_bk_images_2.jpg" alt="").products__slideshow-thumb-img
+																.products__article
+																	.products__article-word Артикул
+																	.products__article-num 189238
+															//описание товара
+															.products__descr
+																.products__descr-title Samsung GT-I9301I GALAXY S 3
+																ul.products__descr-options
+																	- var option = {"Тип SIM-карты" : "Micro-Sim", "Количество SIM-карт" : "1", "Цвет" : "Белый", "ОС" : "Android", "Связь 3G" : "Есть", "4G (LTE)":"Есть", "GPS-модуль" : "Есть"}
+																	each value,key in option
+																		li.products__options-item
+																			.products__options-key= key
+																			.products__options-value= value
+																.products__rating
+																	ul.product__raiting-stars
+																		li.product__raiting-stars-item.product__raiting-stars-item_filled
+																		li.product__raiting-stars-item.product__raiting-stars-item_filled
+																		li.product__raiting-stars-item.product__raiting-stars-item_filled
+																		li.product__raiting-stars-item.product__raiting-stars-item_filled
+																		li.product__raiting-stars-item
+																	.product__raiting-amount 4
+														//цена,заказ
+														.products__right
+															.products__info
+																.products__price 11 290
+																	span.rub  ₽
+															.products__info-bottom
+																a(href="#").products__buy-bttn В корзину
+																.products__availlability В наличии
+							//постраничная навигация
+							.pagination
+								ul.pagination__list
+									li.pagination__item.pagination__item_prev
+										a(href="#").pagination__link
+											.pagination__mark <
+									- for (var i=1;i<4;i++)
+										li.pagination__item
+											a(href="#").pagination__link
+												.pagination__mark= i
+									li.pagination__item.pagination__item_next
+										a(href="#").pagination__link.pagination__mark >
+				//текстовый блок
+				include _common/_text-column
+		//подвал
+		include _common/_footer
+		script(src="bower/jquery/jquery.min.js")
+		script(src="bower/jquery-ui/jquery-ui.min.js")
+		script(src="bower/select2/dist/js/select2.js")
+		script(src="_js/main.js")

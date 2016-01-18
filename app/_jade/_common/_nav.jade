@@ -1,0 +1,9 @@
+//горизонтальная панель навигации
+.main-nav
+	.main-nav__container
+		ul.main-nav__list
+			- var menu_item = {'talet' : 'Планшеты', 'mobile' : 'Мобильные телефоны', 'mp3' : 'Mp3 плееры', 'pc' : 'Персональные компьютеры', 'notebook' : 'Ноутбуки', 'access' : 'Аксессуары', 'appliances' : 'Бытовая техника'}
+
+				each value, key in menu_item 
+					li.main-nav__item
+						a(href="#" class="main-nav__link main-nav__link-#{key}") #{value}

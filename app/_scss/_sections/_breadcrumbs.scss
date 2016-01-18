@@ -1,0 +1,30 @@
+//Хлебные крошки
+.breadcrumbs{
+	padding: 32px 0;
+	background-color: #f4f4f4;
+}
+
+.breadcrumbs__container{
+	@include container;
+}
+
+.breadcrumbs__link{
+	font-family: $regular;
+	font-size: 14px;
+	color: #333333;
+	&-currentpage{
+		color: #ff6600;
+		text-decoration: underline;
+	}
+}
+
+.main-caption{
+	background-color: #f4f4f4;
+	padding-bottom: 34px;
+	&__name{
+		font-family: $bold;
+		font-size: 20px;
+		color: #333333;
+		@include container;
+	}
+}

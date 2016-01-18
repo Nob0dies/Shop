@@ -1,0 +1,22 @@
+//подвал
+footer.footer
+	.footer__container
+		.footer__content
+			//логотип
+			div.footer__logo
+				a(href="#" class="footer__logo-link") 
+					img(src="img/logo_footer.png", alt="Logo in footer")
+			//социальные иконки
+			ul.footer__social_list
+				- var socials = ['fb', 'vk', 'tw']
+				each item in socials
+					li.footer__social_item
+						a(href="#" class="footer__social_link footer__social_link-#{item}") #{item}
+			//ссылки
+			ul.device__list
+				-var devices = {'talet' : 'Планшеты', 'mobile' : 'Мобильные телефоны', 'mp3' : 'Mp3 плееры', 'pc' : 'Персональные компьютеры', 'notebook' : 'Ноутбуки', 'access' : 'Аксессуары', 'appliances' : 'Бытовая техника'}
+
+					each value, key in devices
+						li.device__item
+							a(href="#" class="device__link device__link-#{key}") #{value}
+		.footer__copiright All rights reserved. 2015. no copy alowed

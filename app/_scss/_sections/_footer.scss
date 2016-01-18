@@ -1,0 +1,97 @@
+//подвал
+.footer{
+	height: 220px;
+	background-image: url("../img/bg_footer.jpg");
+	
+}
+.footer__container{
+	padding-top: 47px;
+	@include container;
+	height: 100%;
+	position: relative;
+}
+
+.footer__content{
+	@include clearfix;
+}
+
+.footer__logo{
+	float: left;
+}
+
+.footer__social_list{
+	float: right;
+}
+
+.footer__social_item{
+	display: inline-block;
+	margin-right: 20px;
+	&:last-child{
+		margin-right: 0;
+	}
+}
+
+.footer__social_link{
+	display: block;
+	text-indent: 100%;
+  	white-space: nowrap;
+ 	overflow: hidden;
+
+	&-fb{
+		@include sprite($facebook-footer);
+	}
+	&-vk{
+		@include sprite($vk-footer);
+	}
+	&-tw{
+		@include sprite($tw-footer);
+	}
+	&-fb:hover{
+		@include sprite($facebook-footer-hover);
+	}
+	&-vk:hover{
+		@include sprite($vk-footer-hover);
+	}
+	&-tw:hover{
+		@include sprite($tw-footer-hover);
+	}
+}
+
+.device__list{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 550px;
+	float: right;
+	text-align: right;
+	margin-left: -18px;
+}
+
+.device__item{
+	display: inline-block;
+	text-align: right;
+	margin-left: 18px;
+	margin-bottom: 18px;
+}
+
+.device__link{
+	font-family: $regular;
+	color: #ffffff;
+	text-decoration: underline;
+	font-size: 14px;
+	&:hover{
+		color: darken(#ffffff, 20%);
+	}
+}
+
+.footer__copiright{
+	display: inline-block;
+	position: absolute;
+	left: 40%;
+	bottom: 0;
+	margin: auto;
+	padding-bottom: 8px;
+	font-family: $regular;
+	color: #ffffff;
+	font-size: 12px;
+}

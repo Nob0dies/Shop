@@ -1,0 +1,34 @@
+//шапка
+header.header
+    .social
+        //социальные иконки
+        ul.socials__list
+            - var socials = ['fb', 'vk', 'tw']
+            each item in socials
+                li.socials__item
+                    a(href="#" class="socials__link socials__link-#{item}") #{item}
+        //контакты
+        ul.contacts__list
+            li.contacts__item.contacts__item_adress ул. Маяковская 6, офис 17
+            li.contacts__item.contacts__item_tel
+                a(href="tel:+79211231213" class="contacts__link") +7 (921) 123-12-13
+    //шапка,нижняя часть
+    .header-search
+        .header-search__container
+            //логотип
+            div.header-search__logo
+                a(href="#")
+                    img(src="img/logo_nav.png", alt="logo in navigation")
+            //форма поиска
+            form(action="" class="form-search")
+                input(type="text", name="search" placeholder="Что будем искать" class="form-search__input")
+                button(type="submit" class="form-search__submit") Найти
+            //ссылки
+            nav.header-search__nav
+                ul.header-search__list
+                    li.header-search__item
+                        a(href="#" class="header-search__link") Карта проезда
+                    li.header-search__item
+                        a(href="#" class="header-search__link") История заказов
+                    li.header-search__item
+                        a(href="#" class="header-search__link") Корзина

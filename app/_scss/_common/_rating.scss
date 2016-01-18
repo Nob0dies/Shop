@@ -1,0 +1,65 @@
+//стили к спрайту со звездами рейтинга товаров
+$star-name: 'star';
+$star-x: 0px;
+$star-y: 0px;
+$star-offset-x: 0px;
+$star-offset-y: 0px;
+$star-width: 16px;
+$star-height: 14px;
+$star-total-width: 52px;
+$star-total-height: 14px;
+$star-image: 'stars.png';
+$star: (0px, 0px, 0px, 0px, 16px, 14px, 52px, 14px, '../img/stars.png', 'star', );
+$star-filled-name: 'star_filled';
+$star-filled-x: 36px;
+$star-filled-y: 0px;
+$star-filled-offset-x: -36px;
+$star-filled-offset-y: 0px;
+$star-filled-width: 16px;
+$star-filled-height: 14px;
+$star-filled-total-width: 52px;
+$star-filled-total-height: 14px;
+$star-filled-image: 'stars.png';
+$star-filled: (36px, 0px, -36px, 0px, 16px, 14px, 52px, 14px, '../img/stars.png', 'star_filled', );
+$spritesheet-width: 52px;
+$spritesheet-height: 14px;
+$spritesheet-image: 'stars.png';
+$spritesheet-sprites: ($star, $star-filled, );
+$spritesheet: (52px, 14px, 'stars.png', $spritesheet-sprites, );
+
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

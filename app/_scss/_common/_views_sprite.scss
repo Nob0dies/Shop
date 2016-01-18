@@ -1,0 +1,110 @@
+//стили кнопкам переключения вида каталога
+$grids-name: 'grids';
+$grids-x: 0px;
+$grids-y: 0px;
+$grids-offset-x: 0px;
+$grids-offset-y: 0px;
+$grids-width: 16px;
+$grids-height: 16px;
+$grids-total-width: 88px;
+$grids-total-height: 52px;
+$grids-image: '../img/views.png';
+$grids: (0px, 0px, 0px, 0px, 16px, 16px, 88px, 52px, '../img/views.png', 'grids', );
+$griids-hover-name: 'griids_hover';
+$griids-hover-x: 36px;
+$griids-hover-y: 0px;
+$griids-hover-offset-x: -36px;
+$griids-hover-offset-y: 0px;
+$griids-hover-width: 16px;
+$griids-hover-height: 16px;
+$griids-hover-total-width: 88px;
+$griids-hover-total-height: 52px;
+$griids-hover-image: '../img/views.png';
+$griids-hover: (36px, 0px, -36px, 0px, 16px, 16px, 88px, 52px, '../img/views.png', 'griids_hover', );
+$lines-name: 'lines';
+$lines-x: 0px;
+$lines-y: 36px;
+$lines-offset-x: 0px;
+$lines-offset-y: -36px;
+$lines-width: 16px;
+$lines-height: 16px;
+$lines-total-width: 88px;
+$lines-total-height: 52px;
+$lines-image: '../img/views.png';
+$lines: (0px, 36px, 0px, -36px, 16px, 16px, 88px, 52px, '../img/views.png', 'lines', );
+$lines-hover-name: 'lines_hover';
+$lines-hover-x: 36px;
+$lines-hover-y: 36px;
+$lines-hover-offset-x: -36px;
+$lines-hover-offset-y: -36px;
+$lines-hover-width: 16px;
+$lines-hover-height: 16px;
+$lines-hover-total-width: 88px;
+$lines-hover-total-height: 52px;
+$lines-hover-image: '../img/views.png';
+$lines-hover: (36px, 36px, -36px, -36px, 16px, 16px, 88px, 52px, '../img/views.png', 'lines_hover', );
+$list-name: 'list';
+$list-x: 72px;
+$list-y: 0px;
+$list-offset-x: -72px;
+$list-offset-y: 0px;
+$list-width: 16px;
+$list-height: 16px;
+$list-total-width: 88px;
+$list-total-height: 52px;
+$list-image: '../img/views.png';
+$list: (72px, 0px, -72px, 0px, 16px, 16px, 88px, 52px, '../img/views.png', 'list', );
+$list-hover-name: 'list_hover';
+$list-hover-x: 72px;
+$list-hover-y: 36px;
+$list-hover-offset-x: -72px;
+$list-hover-offset-y: -36px;
+$list-hover-width: 16px;
+$list-hover-height: 16px;
+$list-hover-total-width: 88px;
+$list-hover-total-height: 52px;
+$list-hover-image: '../img/views.png';
+$list-hover: (72px, 36px, -72px, -36px, 16px, 16px, 88px, 52px, '../img/views.png', 'list_hover', );
+$spritesheet-width: 88px;
+$spritesheet-height: 52px;
+$spritesheet-image: '../img/views.png';
+$spritesheet-sprites: ($grids, $griids-hover, $lines, $lines-hover, $list, $list-hover, );
+$spritesheet: (88px, 52px, '../img/views.png', $spritesheet-sprites, );
+
+
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

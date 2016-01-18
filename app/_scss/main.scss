@@ -1,0 +1,21 @@
+@import "_common/mixins";
+@import "_common/_sprite_pagination";
+@import "_common/_rating";
+@import "_common/_social_footer";
+@import "_common/_select";
+/* --------- adjustment --------- */
+
+@import "_layout/_assembly";
+
+/* --------- sections --------- */
+
+// @import "_sections/**/*";
+@import "_sections/_header";
+@import "_sections/_nav";
+@import "_sections/_breadcrumbs";
+@import "_sections/_sidebar";
+@import "_sections/_content";
+@import "_sections/_product";
+@import "_sections/_pagination";
+@import "_sections/_text-column";
+@import "_sections/_footer";

@@ -1,0 +1,35 @@
+//Навигация
+.main-nav{
+	border-bottom: 2px solid #ebedef;
+}
+.main-nav__container{
+	@include container;
+}
+
+.main-nav__list{
+	font-size: 0;
+}
+
+.main-nav__item{
+	display: inline-block;
+}
+.main-nav__link{
+	display: block;
+	padding: 20px 15px;
+	color: #333333;
+	font-family: $regular;
+	font-size: 16px;
+	&:hover{
+		background-color: #e4e2e2;
+	}
+}
+
+.main-nav__link-mobile{
+	background-color: #ff6600;
+	font-family: $semibold;
+	color: #ffffff;
+
+	&:hover{
+		@extend .main-nav__link-mobile;
+	}
+}

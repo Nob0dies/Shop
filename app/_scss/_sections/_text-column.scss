@@ -1,0 +1,32 @@
+//стили к текстовому блоку
+.important-information{
+	@include container;
+}
+
+.important-information__title{
+	font-family: $bold;
+	font-size: 20px;
+}
+
+.column__container{
+	@include clearfix;
+}
+
+.column__paragraph{
+	margin-bottom: 20px;
+	font-family: $regular;
+	font-size: 14px;
+	line-height: 20px;
+	text-indent: 35px;
+	text-align: justify;
+}
+
+.column__left{
+	float: left;
+	width: 49%;
+}
+
+.column__right{
+	float: right;
+	width: 49%;
+}

@@ -1,0 +1,63 @@
+//стили для спрайта со стрелочками
+$arrow-left-name: 'arrow_left';
+$arrow-left-x: 0px;
+$arrow-left-y: 0px;
+$arrow-left-offset-x: 0px;
+$arrow-left-offset-y: 0px;
+$arrow-left-width: 6px;
+$arrow-left-height: 9px;
+$arrow-left-total-width: 32px;
+$arrow-left-total-height: 9px;
+$arrow-left-image: 'pagination.png';
+$arrow-left: (0px, 0px, 0px, 0px, 6px, 9px, 32px, 9px, 'pagination.png', 'arrow_left', );
+$arrow-right-name: 'arrow_right';
+$arrow-right-x: 26px;
+$arrow-right-y: 0px;
+$arrow-right-offset-x: -26px;
+$arrow-right-offset-y: 0px;
+$arrow-right-width: 6px;
+$arrow-right-height: 9px;
+$arrow-right-total-width: 32px;
+$arrow-right-total-height: 9px;
+$arrow-right-image: 'pagination.png';
+$arrow-right: (26px, 0px, -26px, 0px, 6px, 9px, 32px, 9px, 'pagination.png', 'arrow_right', );
+$spritesheet-width: 32px;
+$spritesheet-height: 9px;
+$spritesheet-image: 'pagination.png';
+$spritesheet-sprites: ($arrow-left, $arrow-right, );
+$spritesheet: (32px, 9px, 'pagination.png', $spritesheet-sprites, );
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

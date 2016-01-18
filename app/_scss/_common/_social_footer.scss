@@ -1,0 +1,107 @@
+//стили к спрайту с соц.иконками для футера
+$facebook-footer-hover-name: 'facebook_footer-hover';
+$facebook-footer-hover-x: 0px;
+$facebook-footer-hover-y: 0px;
+$facebook-footer-hover-offset-x: 0px;
+$facebook-footer-hover-offset-y: 0px;
+$facebook-footer-hover-width: 43px;
+$facebook-footer-hover-height: 43px;
+$facebook-footer-hover-total-width: 169px;
+$facebook-footer-hover-total-height: 106px;
+$facebook-footer-hover-image: '../img/social_footer.png';
+$facebook-footer-hover: (0px, 0px, 0px, 0px, 43px, 43px, 169px, 106px, '../img/social_footer.png', 'facebook_footer-hover', );
+$facebook-footer-name: 'facebook_footer';
+$facebook-footer-x: 63px;
+$facebook-footer-y: 0px;
+$facebook-footer-offset-x: -63px;
+$facebook-footer-offset-y: 0px;
+$facebook-footer-width: 43px;
+$facebook-footer-height: 43px;
+$facebook-footer-total-width: 169px;
+$facebook-footer-total-height: 106px;
+$facebook-footer-image: '../img/social_footer.png';
+$facebook-footer: (63px, 0px, -63px, 0px, 43px, 43px, 169px, 106px, '../img/social_footer.png', 'facebook_footer', );
+$tw-footer-hover-name: 'tw_footer-hover';
+$tw-footer-hover-x: 0px;
+$tw-footer-hover-y: 63px;
+$tw-footer-hover-offset-x: 0px;
+$tw-footer-hover-offset-y: -63px;
+$tw-footer-hover-width: 43px;
+$tw-footer-hover-height: 43px;
+$tw-footer-hover-total-width: 169px;
+$tw-footer-hover-total-height: 106px;
+$tw-footer-hover-image: '../img/social_footer.png';
+$tw-footer-hover: (0px, 63px, 0px, -63px, 43px, 43px, 169px, 106px, '../img/social_footer.png', 'tw_footer-hover', );
+$tw-footer-name: 'tw_footer';
+$tw-footer-x: 63px;
+$tw-footer-y: 63px;
+$tw-footer-offset-x: -63px;
+$tw-footer-offset-y: -63px;
+$tw-footer-width: 43px;
+$tw-footer-height: 43px;
+$tw-footer-total-width: 169px;
+$tw-footer-total-height: 106px;
+$tw-footer-image: '../img/social_footer.png';
+$tw-footer: (63px, 63px, -63px, -63px, 43px, 43px, 169px, 106px, '../img/social_footer.png', 'tw_footer', );
+$vk-footer-hover-name: 'vk_footer-hover';
+$vk-footer-hover-x: 126px;
+$vk-footer-hover-y: 0px;
+$vk-footer-hover-offset-x: -126px;
+$vk-footer-hover-offset-y: 0px;
+$vk-footer-hover-width: 43px;
+$vk-footer-hover-height: 43px;
+$vk-footer-hover-total-width: 169px;
+$vk-footer-hover-total-height: 106px;
+$vk-footer-hover-image: '../img/social_footer.png';
+$vk-footer-hover: (126px, 0px, -126px, 0px, 43px, 43px, 169px, 106px, '../img/social_footer.png', 'vk_footer-hover', );
+$vk-footer-name: 'vk_footer';
+$vk-footer-x: 126px;
+$vk-footer-y: 63px;
+$vk-footer-offset-x: -126px;
+$vk-footer-offset-y: -63px;
+$vk-footer-width: 43px;
+$vk-footer-height: 43px;
+$vk-footer-total-width: 169px;
+$vk-footer-total-height: 106px;
+$vk-footer-image: '../img/social_footer.png';
+$vk-footer: (126px, 63px, -126px, -63px, 43px, 43px, 169px, 106px, '../img/social_footer.png', 'vk_footer', );
+$spritesheet-width: 169px;
+$spritesheet-height: 106px;
+$social_footer-image: '../img/social_footer.png';
+$spritesheet-sprites: ($facebook-footer-hover, $facebook-footer, $tw-footer-hover, $tw-footer, $vk-footer-hover, $vk-footer, );
+$spritesheet: (169px, 106px, '../img/social_footer.png', $spritesheet-sprites, );
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
