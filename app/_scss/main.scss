@@ -1,15 +1,12 @@
+//общие файлы стилей
 @import "_common/mixins";
 @import "_common/_sprite_pagination";
 @import "_common/_rating";
 @import "_common/_social_footer";
 @import "_common/_select";
-/* --------- adjustment --------- */
+@import "_common/_assembly";
 
-@import "_layout/_assembly";
-
-/* --------- sections --------- */
-
-// @import "_sections/**/*";
+//стили для каждого элемента
 @import "_sections/_header";
 @import "_sections/_nav";
 @import "_sections/_breadcrumbs";

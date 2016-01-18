@@ -17,7 +17,6 @@
 .select2-dropdown {
   box-shadow: 0 1px 7.2px 1px rgba(153, 153, 153, 0.75); }
 
-/* --------- adjustment --------- */
 html, body {
   width: 100%;
   height: 100%; }
@@ -68,12 +67,11 @@ footer {
   height: 220px;
   margin-top: -220px; }
 
-/* --------- sections --------- */
 .social {
   padding: 25px 0 25px 0;
   width: 1110px;
   margin: 0 auto;
-  line-height: 30px; }
+  line-height: 15px; }
   .social:after {
     content: "";
     display: table;
@@ -84,7 +82,7 @@ footer {
 
 .socials__item {
   display: inline-block;
-  margin-right: 15px; }
+  margin-right: 10px; }
   .socials__item:last-child {
     margin-right: 0; }
 
@@ -116,7 +114,6 @@ footer {
 
 .contacts__item {
   display: inline-block;
-  margin-left: 122px;
   position: relative; }
   .contacts__item:first-child {
     margin-left: 0; }
@@ -128,7 +125,7 @@ footer {
     background-position: 0px -91px;
     width: 12px;
     height: 16px;
-    top: 8px;
+    top: 1px;
     left: -20px; }
   .contacts__item_tel:before {
     display: block;
@@ -138,7 +135,7 @@ footer {
     background-position: -32px -92px;
     width: 12px;
     height: 16px;
-    top: 8px;
+    top: 1px;
     left: -20px; }
 
 .contacts__item_adress {
@@ -147,7 +144,9 @@ footer {
 
 .contacts__item_tel {
   font-family: "open_sanssemibold";
-  font-size: 18px; }
+  font-size: 18px;
+  margin-left: 103px;
+  margin-right: 15px; }
 
 .contacts__link {
   color: #333333; }
@@ -161,14 +160,14 @@ footer {
   width: 1110px;
   margin: 0 auto;
   position: relative;
-  padding: 30px 0 30px 0; }
+  padding: 25px 0 25px 0; }
 
 .header-search__logo, .form-search, .header-search__nav {
   display: inline-block;
   vertical-align: middle; }
 
 .form-search {
-  margin-left: 100px; }
+  margin-left: 55px; }
 
 .header-search__nav {
   position: absolute;
@@ -177,7 +176,7 @@ footer {
 
 .header-search__item {
   display: inline-block;
-  margin-right: 35px; }
+  margin-right: 30px; }
   .header-search__item:last-child {
     margin-right: 0; }
 
@@ -198,7 +197,8 @@ footer {
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   -ms-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px; }
+  border-radius: 4px 0 0 4px;
+  width: 289px; }
 
 .form-search__submit {
   margin-left: -5px;
@@ -243,7 +243,7 @@ input:-ms-input-placeholder {
 
 .main-nav__link {
   display: block;
-  padding: 20px 15px;
+  padding: 16px 15px;
   color: #333333;
   font-family: "open_sansregular";
   font-size: 16px; }
@@ -256,7 +256,8 @@ input:-ms-input-placeholder {
   color: #ffffff; }
 
 .breadcrumbs {
-  padding: 32px 0;
+  padding-top: 30px;
+  padding-bottom: 20px;
   background-color: #f4f4f4; }
 
 .breadcrumbs__container {
@@ -273,7 +274,7 @@ input:-ms-input-placeholder {
 
 .main-caption {
   background-color: #f4f4f4;
-  padding-bottom: 34px; }
+  padding-bottom: 30px; }
   .main-caption__name {
     font-family: "open_sansbold";
     font-size: 20px;
@@ -311,7 +312,7 @@ input:-ms-input-placeholder {
     background-color: #d9e5ea; }
 
 .sidebar-nav {
-  margin-bottom: 40px; }
+  margin-bottom: 38px; }
 
 .filter {
   font-family: "open_sansregular";
@@ -364,16 +365,16 @@ input:-ms-input-placeholder {
 
 .accordeon__inner-label {
   display: inline-block;
-  margin-bottom: 10px; }
+  margin-bottom: 15px; }
 
 .accordeon__inner {
-  padding: 10px 25px; }
+  padding: 4px 25px; }
 
 .reset-filter {
   color: #5db2fc;
   text-decoration: underline;
   display: inline-block;
-  margin: 10px 0 15px 0; }
+  margin: 0px 0 15px 0; }
 
 .checkbox, .radiobutton {
   display: none; }
@@ -562,12 +563,12 @@ input:-ms-input-placeholder {
   margin-right: 10px; }
 
 .views__list {
-  margin-left: 10px;
+  margin-left: 15px;
   display: inline-block; }
 
 .views__item {
   display: inline-block;
-  width: 50px; }
+  width: 47px; }
 
 .views__button {
   display: block;
@@ -1063,7 +1064,7 @@ input:-ms-input-placeholder {
   background-image: url("../img/bg_footer.jpg"); }
 
 .footer__container {
-  padding-top: 47px;
+  padding-top: 35px;
   width: 1110px;
   margin: 0 auto;
   height: 100%;

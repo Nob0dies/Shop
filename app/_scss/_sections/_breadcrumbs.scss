@@ -1,6 +1,7 @@
 //Хлебные крошки
 .breadcrumbs{
-	padding: 32px 0;
+	padding-top: 30px;
+	padding-bottom: 20px;
 	background-color: #f4f4f4;
 }
 
@@ -20,7 +21,7 @@
 
 .main-caption{
 	background-color: #f4f4f4;
-	padding-bottom: 34px;
+	padding-bottom: 30px;
 	&__name{
 		font-family: $bold;
 		font-size: 20px;
