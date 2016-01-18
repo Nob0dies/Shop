@@ -1,0 +1,88 @@
+//стили к каталогу товаров
+.main-content{
+	float: right;
+	width: 743px;
+	font-family: $regular;
+	font-size: 14px;
+	color: #333333;
+	&__sort{
+		float: left;
+	};
+	&__view{
+		float: right;
+	};
+}
+
+.main-content__header{
+	background-color: #e4ebee;
+	height: 53px;
+	line-height: 53px;
+	@include border-radius(4px);
+	@include clearfix;
+	padding-left: 21px;
+	border: 1px solid #dee1e4;
+	margin-bottom: 20px;
+}
+
+.main-content__categories{
+	color:#5d656c;
+	display: inline-block;
+}
+
+.main-content__categories-sort{
+	margin-right: 10px;
+}
+
+@import "../_common/_views_sprite";
+
+
+.views__list{
+	margin-left: 10px;
+	display: inline-block;
+}
+
+.views__item{
+	display: inline-block;
+	width: 50px;
+}
+
+.views__button{
+	display: block;
+	text-align: center;
+
+	&:hover .views__button_container-list{
+		@include sprite($list-hover);
+	}
+
+	&:hover .views__button_container-grid{
+		@include sprite($griids-hover);
+	}
+
+	&:hover .views__button_container-line{
+		@include sprite($lines-hover);
+	}
+}
+
+
+.views__button_container{
+	display: inline-block;
+	text-align: center;
+	@include sprite($list);
+	&-grid{
+		@include sprite($grids);
+	}
+	&-line{
+		@include sprite($lines);
+	}
+
+}
+
+.list-active{
+    @include sprite($list-hover);
+}
+.grid-active{
+	@include sprite($griids-hover);
+}
+.line-active{
+	@include sprite($lines-hover);
+}

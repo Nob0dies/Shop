@@ -1,0 +1,32 @@
+.pagination{
+	margin-top: 68px;
+}
+.pagination__list{
+	text-align: right;
+}
+.pagination__item{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	@include border-radius(3px);
+	overflow: hidden;
+	border: 1px solid #dee1e4;
+	&:hover{
+		border: 1px solid #bdbdbd;
+	}
+}
+
+.pagination__link{
+	display: block;
+	text-align: center;
+	line-height: 26px;
+	font-family: $bold;
+	font-size: 12px;
+	color: #7f7f7f;
+	background-color: #fbfbfb;
+	&:hover{
+		background-color: #e0e0e0;
+		color: #fbfbfb;
+	}
+}
